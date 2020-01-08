@@ -16,7 +16,7 @@ dic_path = pkg_resources.resource_filename('pykospacing', os.path.join('resource
 model = load_model(model_path)
 model._make_predict_function()
 w2idx, _ = load_vocab(dic_path)
-
+max_len = 1500
 
 class pred_spacing:
     def __init__(self, model, w2idx):
@@ -52,7 +52,7 @@ pred_spacing = pred_spacing(model, w2idx)
 
 
 def spacing(sent):
-    if len(sent) > 198:
-        warnings.warn('One sentence can not contain more than 198 characters. : {}'.format(sent))
+    if len(sent) > max_len:
+        warnings.warn('One sentence can not contain more than {} characters. : {}'.format(max_len,sent))
     spaced_sent = pred_spacing.get_spaced_sent(sent)
     return(spaced_sent.strip())
