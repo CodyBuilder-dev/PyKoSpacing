@@ -22,7 +22,7 @@ def main(args=sys.argv[1:]):
 
     source = args.infile.read()
     
-    limit = 1500
+    limit = 200
     result = '\n'
     for line in source.splitlines():
         while len(line) > limit:
