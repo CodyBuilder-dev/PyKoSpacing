@@ -28,7 +28,7 @@ class pred_spacing:
         raw_sent_ = "«" + raw_sent + "»"
         raw_sent_ = raw_sent_.replace(' ', '^')
         sents_in = [raw_sent_, ]
-        mat_in = encoding_and_padding(word2idx_dic=self.w2idx, sequences=sents_in, maxlen=max_len, padding='post', truncating='post')
+        mat_in = encoding_and_padding(word2idx_dic=self.w2idx, sequences=sents_in, maxlen=1500, padding='post', truncating='post')
         results = self.model.predict(mat_in)
         mat_set = results[0, ]
         preds = np.array(['1' if i > 0.5 else '0' for i in mat_set[:len(raw_sent_)]])
