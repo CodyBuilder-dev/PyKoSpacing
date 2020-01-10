@@ -4,7 +4,7 @@ from pykospacing import __version__
 
 setup(name='pykospacing',
       version=__version__,
-      url='https://github.com/haven-jeon/PyKoSpacing',
+      url='https://github.com/CodyBuilder-dev/PyKoSpacing',
       license='GPL-3',
       author='Heewon Jeon',
       author_email='madjakarta@gmail.com',
